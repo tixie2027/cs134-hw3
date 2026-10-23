@@ -1,1 +1,5 @@
 Here to ensure test is added to path
+
+for mobj_test.c:
+gcc -I. -Iinclude test/mobj_test.c src/mobj.c util/list.c util/spinlock.c -o bin/mobj_test
+./bin/mobj_test
