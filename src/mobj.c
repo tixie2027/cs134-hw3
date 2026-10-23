@@ -29,9 +29,10 @@ void mobj_find_pframe(mobj_t *o, long pagenum, pframe_t **pfp) {
     while (link != NULL) {
         pframe_t *cur_frame = link->parent;
 
-        if (cur_frame->pf_pagenum == pagenum)
+        if (cur_frame->pf_pagenum == pagenum) {
             *pfp = cur_frame;
             return;
+        }
 
         link = link->next;
     }
@@ -129,7 +130,6 @@ void mobj_flush(mobj_t *o) {
         if (o->mo_ops.flush_pframe(o, pf) != 0) {
             return;
         }
-
         link = link->next;
     }
 }
